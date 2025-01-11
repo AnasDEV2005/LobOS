@@ -1,0 +1,53 @@
+:vars {
+    --background: #150d16;
+    --foreground: #d9edee;
+    --color0: #150d16;
+    --color1: #72448D;
+    --color2: #9C5995;
+    --color3: #D5719F;
+    --color4: #9A62F3;
+    --color5: #E075DF;
+    --color6: #F98F9F;
+    --color7: #f5dbc4;
+    --color8: #ab9989;
+    --color9: #72448D;
+    --color10: #9C5995;
+    --color11: #D5719F;
+    --color12: #9A62F3;
+    --color13: #E075DF;
+    --color14: #F98F9F;
+    --color15: #f5dbc4;
+    --window-bg: alpha(var(--background), 0.6);
+    --module-bg: alpha(var(--background), 0.4);
+    --border-color: var(--color11);
+}
+
+* {
+    all: unset;
+    font-family: "Jet brains mono";
+    font-weight: 500;
+    font-size: 18px;
+    color: alpha(var(--foreground), 0.6);
+}
+
+#window-inner {
+    border-color: alpha(var(--color11), 0);
+    background-color: alpha(var(--window-bg), 0);
+    padding: 0px;
+}
+
+#big {
+    color: #d9edee;
+    font-weight: 500;
+    font-size: 18px;
+}
+#small { 
+    color: #d9edee;
+    font-weight: 400;
+    font-size: 14px;
+}
+#header {
+    background: alpha(var(--color11), 0);
+}
+
+

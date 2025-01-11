@@ -1,0 +1,219 @@
+@import "./components/components.css";
+@import "colors.css";
+
+* {
+  all: unset;
+  font-family: "roboto";
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--fg);
+}
+
+tooltip {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--bg_h);
+}
+
+tooltip label {
+  font-family: "roboto mono";
+}
+
+scale {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#system-tray>button,
+#panel-button-active,
+#date-time,
+#panel-button {
+  margin: 0px 2px 0px 2px;
+  padding: 0px 5px 0px 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  border-color: transparent;
+}
+
+#date-time:hover,
+#system-tray>button:hover,
+#panel-button:hover {
+  background-color: alpha(mix(var(--accent), black, 0.5), 0.8);
+  border-color: alpha(var(--fg), 0.1);
+}
+
+#panel-button label {
+  font-weight: 700;
+}
+
+#date-time label {
+  font-weight: 900;
+  /* color: var(--orange); */
+}
+
+#panel-button.activated {
+  background-color: alpha(white, 0.15);
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-color: alpha(white, 0.5);
+}
+
+#date-time:active,
+#date-time:active label,
+#system-tray>button:active,
+#panel-button-active,
+#panel-button-active image,
+#panel-button:active label,
+#panel-button:active image,
+#panel-button:active>*>*>label,
+#panel-button:active>*>label,
+#panel-button-active>box>label,
+#panel-button:active {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+#workspaces>button {
+  border-radius: 100%;
+  min-width: 10px;
+  min-height: 8px;
+  margin: 13px 2px 13px 2px;
+  transition-property: border-radius;
+  transition: min-width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: var(--fg);
+}
+
+#workspaces {
+  margin: 0px 5px 0px 5px;
+}
+
+#player-stack-button {
+  border-radius: 5px;
+  min-width: 30px;
+  min-height: 10px;
+  margin: 10px 1px 10px 1px;
+  background-color: var(--fg);
+}
+
+#player-stack-button:hover {
+  background-color: #646464;
+}
+
+#player-stack-button.active,
+#workspaces>button.active {
+  border-radius: 5px;
+  min-width: 30px;
+  margin: 10px 1px 10px 1px;
+  background-color: var(--accent);
+}
+
+#player-stack-button.empty,
+#workspaces>button.empty {
+  min-width: 9px;
+  margin: 14px 2px 14px 2px;
+  background-color: var(--fg4);
+}
+
+#workspaces>button.urgent {
+  background-color: var(--red-dim);
+}
+
+#workspaces>button:hover {
+  background-color: var(--bg4);
+}
+
+#prayer-info {
+  background-color: alpha(black, 0.9);
+  border-radius: 20px;
+  border-style: solid;
+  /* border-width: 5px; */
+  /* border-color: alpha(var(--bg_h), 0.9); */
+  margin: 5px;
+  padding: 15px;
+}
+
+#system-tray-menu>menuitem menu>menuitem:hover,
+#system-tray-menu>menuitem:hover,
+#submenu-button:hover {
+  background-color: alpha(var(--bg4), 0.8);
+  border-color: alpha(var(--fg), 0.1);
+}
+
+#submenu-button:active {
+  background-color: var(--accent);
+}
+
+#submenu-button:active>* {
+  color: var(--bg);
+}
+
+#submenu-title {
+  border-style: solid;
+  border-bottom-width: 2px;
+  border-color: var(--bg3);
+  margin-bottom: 5px;
+}
+
+#submenu-label {
+  margin-left: 5px;
+}
+
+#submenu-title-label {
+  font-size: 17px;
+}
+
+#submenu-item {
+  margin: 5px;
+}
+
+#system-tray-menu>menuitem menu>menuitem,
+#system-tray-menu>menuitem {
+  border-width: 1px;
+  border-style: double;
+  border-color: var(--fg4);
+  margin: 5px 0px 5px 0px;
+}
+
+#system-tray-menu>menuitem menu>menuitem:disabled,
+#system-tray-menu>menuitem:disabled {
+  background-color: var(--bg_h);
+}
+
+#submenu-button {
+  background-color: var(--bg2);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+#system-tray-menu>menuitem menu>menuitem,
+#system-tray-menu>menuitem {
+  background-color: var(--bg2);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#system-tray-menu>menuitem menu,
+#system-tray-menu,
+#submenu {
+  /* min-width: 450px; */
+  background-color: alpha(var(--bg), 1);
+  border-radius: 20px;
+  border-width: 5px;
+  border-color: alpha(var(--accent), 1);
+  padding: 10px;
+}
+
+#system-tray,
+#panel-icon {
+  margin-left: 2px;
+  font-size: 25px;
+  margin-right: 2px;
+}
+
+#panel-text {
+  margin-top: 2px;
+  font-size: 15px;
+  font-weight: 900;
+}

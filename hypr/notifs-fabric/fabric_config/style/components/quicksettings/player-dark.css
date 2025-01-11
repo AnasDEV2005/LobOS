@@ -1,0 +1,64 @@
+#inner-player-box {
+    background-color: alpha(var(--bg_s), 0.7);
+    border-radius: 20px;
+}
+
+#seek-bar {
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#seek-bar trough {
+    border-radius: 100px;
+    min-height: 8px;
+    background-color: rgb(94, 94, 94);
+}
+
+#seek-bar trough highlight {
+    border-radius: 20px;
+}
+
+
+#seek-bar trough:hover {
+    background-color: var(--bg2);
+}
+
+#player-box {
+    margin: 5px;
+}
+
+#player-title {
+    font-family: "roboto";
+    font-weight: 700;
+    color: var(--fg);
+    font-size: 18px;
+}
+
+#player-artist {
+    font-family: "roboto";
+    font-weight: 600;
+    font-size: 13px;
+    color: rgb(175, 175, 175);
+}
+
+#button-box {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+#player-button {
+    min-width: 25px;
+    min-height: 25px;
+    padding: 8px;
+    border-radius: 100%;
+}
+
+#player-button:hover {
+    background-color: @bg3;
+}
+
+#player-button:active {
+    background-color: @bg4;
+    box-shadow: 0 0 5px -3px @fg;
+}

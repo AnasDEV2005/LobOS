@@ -50,7 +50,7 @@ PACKAGES=(
     "gdu"
     "bpytop"
     "htop"
-
+    "ttf-unifont"
     # Add more packages here
 )
 

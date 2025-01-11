@@ -24,7 +24,7 @@ chmod +x ./arch-installations.sh
 curl -L -o ~/LobOS/zen-browser.AppImage https://github.com/ZenBrowser/ZenBrowser/releases/download/v1.0/zen-browser-x86_64.AppImage
 
 chmod +x ~/LobOS/zen-browser.AppImage
-
+sudo cp ~/LobOS/zen /usr/bin
 
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -94,7 +94,6 @@ echo "Verifying python packages"
 sudo chown -R $USER:$USER ~/.config/vesktop
 sudo chmod -R 700 ~/.config/vesktop
 
-yay -S python-pip
 python -m ensurepip --upgrade
 source ~/.config/hypr/fabric-venv/bin/activate
 cd ~/.config/hypr 

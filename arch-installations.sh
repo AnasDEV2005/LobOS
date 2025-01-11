@@ -82,31 +82,11 @@ main() {
             if yay -Qi "$pkg" >/dev/null 2>&1; then
                 echo "Package '$pkg' is already installed."
             else
-                read -p "Should we proceed with installing '$pkg' ? (y/n)" install_choice
-                if [ "$install_choice" == "y" ]; then
-                    echo "Installing '$pkg'..."
-                    yay -S --noconfirm "$pkg"
-                else
-                    echo "Skipping '$pkg'"
-                fi
+                echo "Installing '$pkg'..."
+                yay -S $pkg --noconfirm
+
             fi
         done
-    else
-        echo "Installing packages..."
-        for pkg in "${PACKAGES[@]}"; do
-            if yay -Qi "$pkg" >/dev/null 2>&1; then
-                echo "Package '$pkg' is already installed."
-            else
-                read -p "Should we proceed with installing '$pkg' ? (y/n)" install_choice
-                if [ "$install_choice" == "y" ]; then
-                    echo "Installing '$pkg'..."
-                    yay -S --noconfirm "$pkg"
-                else
-                    echo "Skipping '$pkg'"
-                fi
-            fi
-        done
-    fi 
 
     echo "All done!"
 }

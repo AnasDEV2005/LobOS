@@ -27,7 +27,7 @@ from fabric.utils import DesktopApp, get_desktop_applications, idle_add, remove_
 from fabric.utils import invoke_repeater, get_relative_path, exec_shell_command
 import subprocess
 from gi.repository import Gtk
-    
+from wallpicker import Wallpicker    
 
 
 def get_profile_picture_path() -> str | None:
@@ -297,6 +297,16 @@ class SidePanel(Window):
                 child=self.appbox,
             )
 
+## BROWSER
+#############################################################################
+
+
+
+## WALLPAPER PICKER
+#############################################################################
+
+
+
 ##################### TOOLS BUTTONS ########################################################################3        
 
         self.buttons = Box(
@@ -315,6 +325,7 @@ class SidePanel(Window):
                     on_clicked=lambda *_: self.run_overview_widget(),
                 ),
             self.progress_container,
+
             Button(name='apps',
                    style='padding-top:7px ; padding-bottom:7px ;',
                     child=Image(
@@ -334,6 +345,26 @@ class SidePanel(Window):
                     ),
 
                     on_clicked=lambda *_: self.toggle_window_note(),
+                ),
+            Button(name='browser',
+                   style='padding-top:7px ; padding-bottom:7px ;',
+                    child=Image(
+                        name="apps",
+                        image_file="/home/geronimo/.config/hypr/icon/squares-four.png",
+                        size=38,
+                    ),
+
+                    on_clicked=lambda *_: exec_shell_command("xdg-open https://www.google.com"),
+                ),
+            Button(name='wallpicker',
+                   style='padding-top:7px ; padding-bottom:7px ;',
+                    child=Image(
+                        name="apps",
+                        image_file="/home/geronimo/.config/hypr/icon/squares-four.png",
+                        size=38,
+                    ),
+
+                    on_clicked=lambda *_: exec_shell_command("../run_wallpicker.sh"),
                 ),
             Button(name='powermenubutton',
                    style='padding-top:7px ; padding-bottom:7px ;',

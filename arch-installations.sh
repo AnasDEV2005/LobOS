@@ -51,6 +51,10 @@ PACKAGES=(
     "bpytop"
     "htop"
     "ttf-unifont"
+    "wayvibes-git"
+    "alacritty"
+    "dhcpcd"
+    "swww-git"
     # Add more packages here
 )
 

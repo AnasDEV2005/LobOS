@@ -392,14 +392,14 @@ cyan    = "#22ECDB"
 white   = "#c3cfd9"
 
 [colors.bright]
-black   = "#262e3d"
+black   = "#a1adb7"
 red     = "#FF955C"
 green   = "#7BF3D2"
 yellow  = "#EACD61"
 blue    = "#74E1FB"
 magenta = "#A48EF5"
 cyan    = "#22ECDB"
-white   = "#a1adb7"
+white   = "#c3cfd9"
 
 
 

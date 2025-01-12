@@ -53,7 +53,8 @@ ZSH_THEME="robbyrussell"
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-
+figlet LobOS
+neofetch
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
@@ -73,7 +74,6 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     zsh-autosuggestions
-    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -134,7 +134,8 @@ zstyle ':vcs_info:git:*' formats '%F{blue}git:%f(%F{red}%b%f) %F{red}%f'
 zstyle ':vcs_info:git:*' actionformats '%F{blue}git:%f(%F{red}%b%f) %F{red}✗%f'
 
 # PS1 Prompt
-PS1="→  %{${fg_bold[magenta]}%}%B%F{yellow}%3~%b%f%(0?..%{${fg[red]}%}%?)%{${fg[blue]}%} %{${reset_color}%} ✗ %B%F{cyan} $USER@$HOST ✗%b%f %{${reset_color}%}\${vcs_info_msg_0_}※ "
+PS1="→  %{${fg_bold[magenta]}%}%B%F{yellow}%3~%b%f%(0?..%{${fg[red]}%}%?)%{${fg[blue]}%} %{${reset_color}%} ✗ %B%F{blue}$USER@%B%F{cyan}$HOST ✗%b%f %{${reset_color}%}\${vcs_info_msg_0_}※ "
+
 
 
 

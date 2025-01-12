@@ -84,9 +84,9 @@ sudo cp -r ~/LobOS/neofetch ~/.config
 sudo cp -r ~/LobOS/vesktop ~/.config
 
 sudo rm /etc/sddm.conf.d
-mkdir  /etc/sddm.conf.d 
-sudo cp -r ~/LobOS/autologin.conf /etc/sddm.conf.d 
- 
+sudo mkdir /etc/sddm.conf.d/
+sudo cp ~/LobOS/autologin.conf /etc/sddm.conf.d/
+
 sudo cp -r ~/LobOS/newfont.ttf /usr/share/fonts
 
 echo "Verifying python packages"

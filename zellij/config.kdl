@@ -135,7 +135,7 @@ keybinds clear-defaults=true {
         bind "Alt =" { Resize "Increase"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
-        bind "Alt f" { ToggleFloatingPanes; }
+        bind "Ctrl f" { ToggleFloatingPanes; }
         bind "Ctrl g" { SwitchToMode "locked"; }
         bind "Alt i" { MoveTab "left"; }
         bind "Alt n" { NewPane; }
@@ -161,17 +161,28 @@ keybinds clear-defaults=true {
     shared_except "locked" "scroll" "search" "tmux" {
         bind "Ctrl b" { SwitchToMode "tmux"; }
     }
-    shared_except "locked" "scroll" "search" {
-        bind "Ctrl s" { SwitchToMode "scroll"; }
+  //  shared_except "locked" "scroll" "search" {
+    //    bind "Ctrl " { SwitchToMode "scroll"; }
+   // }
+  // i changed this -----------------------------
+    shared_except "locked" "tab" {
+        bind "Ctrl t" { SwitchToMode "tab"; NewTab; SwitchToMode "normal"; }
     }
     shared_except "locked" "tab" {
-        bind "Ctrl t" { SwitchToMode "tab"; }
+        bind "Ctrl w" { SwitchToMode "tab"; CloseTab; SwitchToMode "normal"; }
     }
-    shared_except "locked" "pane" {
-        bind "Ctrl p" { SwitchToMode "pane"; }
+      shared_except "locked" "tab" "pane" {
+        bind "Ctrl p" { SwitchToMode "pane"; NewPane; SwitchToMode "normal"; }
     }
+     shared_except "locked" "tab" "pane" {
+        bind "Ctrl 1" { SwitchToMode "tab"; GoToPreviousTab; SwitchToMode "normal"; }
+    }
+    shared_except "locked" "tab" "pane" {
+        bind "Ctrl 2" { SwitchToMode "tab"; GoToNextTab; SwitchToMode "normal"; }
+    }
+  // ---------------------------------------------
     shared_except "locked" "resize" {
-        bind "Ctrl n" { SwitchToMode "resize"; }
+        bind "Ctrl r" { SwitchToMode "resize"; }
     }
     shared_except "normal" "locked" "entersearch" {
         bind "enter" { SwitchToMode "normal"; }

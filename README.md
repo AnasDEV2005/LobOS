@@ -8,7 +8,9 @@
 
 #### 🗀 nvim/ my neovim config of nvchad, added plugins and abit configured
 
-#### 🗀 vesktop/ my vencord settings + theme
+#### 🗀 themes/ my vencord theme
+
+#### 🗀 zellij/ my zellij config 
 
 #### 🗀 showcase/
 

@@ -64,9 +64,13 @@
 }
 
 #pfp {
-  border-width: 2px;
-  border-color: alpha( var(--foreground), 1 );
-  border-radius: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 500px;
+    padding: 32px;
+    margin-right: 835px;
+    margin-left: 835px;
 
 }
 

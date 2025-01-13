@@ -71,7 +71,7 @@ class SidePanel(Window):
                 on_clicked = lambda *_: self.toggle_overview_widget(),
             )
         )
-        self.toggle_button.show()
+        self.toggle_button.hide()
 
         
 

@@ -27,7 +27,6 @@ class Wallpicker(Window):
             layer="overlay",
             anchor="top",
             exclusivity="none",
-            margin="20px, 20px, 20px, 20px",
             keyboard_mode="on-demand",
             visible=True,
             orientation = "v",

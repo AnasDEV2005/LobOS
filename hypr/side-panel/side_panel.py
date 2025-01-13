@@ -25,21 +25,30 @@ from fabric.widgets.entry import Entry
 from fabric.widgets.scrolledwindow import ScrolledWindow
 from fabric.utils import DesktopApp, get_desktop_applications, idle_add, remove_handler, get_relative_path
 from fabric.utils import invoke_repeater, get_relative_path, exec_shell_command
-import subprocess
 from gi.repository import Gtk
 from wallpicker import Wallpicker    
+from os import listdir
+from os.path import isfile, join, expanduser
+from NetworkManager import NetworkManager
 
+
+wallpapers_dir = expanduser("~/.config/hypr/wallpapers")
+
+onlyfiles = [f for f in listdir(wallpapers_dir) if isfile(join(wallpapers_dir, f))]
 
 def get_profile_picture_path() -> str | None:
-    path = os.path.expanduser("~/Downloads/profile.jpg")
+    path = os.path.expanduser("~/.config/hypr/pfp.jpg")
     if not os.path.exists(path):
         path = os.path.expanduser("~/.face")
     if not os.path.exists(path):
         logger.warning(
-            "can't fetch a user profile picture, add a profile picture image at ~/.face or at ~/Pictures/Other/profile.jpg"
+    "can't fetch a user profile picture, add a profile picture image at ~/.face or at ~/Pictures/Other/profile.jpg"
         )
         path = None
     return path
+
+
+
 def run_overview_widget():
     subprocess.run(["chmod", "+x", "/home/geronimo/.config/hypr/toggle_overview.sh"], check=True)
     subprocess.run(["/home/geronimo/.config/hypr/toggle_overview.sh"], check=True)
@@ -297,13 +306,35 @@ class SidePanel(Window):
                 child=self.appbox,
             )
 
-## BROWSER
+## WIFI MANAGER
 #############################################################################
-
-
 
 ## WALLPAPER PICKER
 #############################################################################
+        onlyfiles = [f for f in listdir(wallpapers_dir) if isfile(join(wallpapers_dir, f))]
+
+        self.w_viewport = self.make_viewport(onlyfiles)
+
+        self.w_scrolled_window = ScrolledWindow(
+            kinetic_scroll=True,
+            name = "scrolled-viewport",
+            min_content_size=(900, 500),
+            max_content_size=(900, 500),
+            child=self.w_viewport,
+        )
+
+        self.window_wallpicker = Window(
+            name="appwindow",
+            layer="overlay",
+            anchor="top left",
+            exclusivity="none",
+            keyboard_mode="on-demand",
+            visible=False,
+            orientation = "v",
+            all_visible=False,
+            child=self.w_scrolled_window,
+            )
+
 
 
 
@@ -312,18 +343,9 @@ class SidePanel(Window):
         self.buttons = Box(
             orientation='v',
             style="margin-top:30px;",
-            spacing=45,
+            spacing=42,
             children=[
-            Button(name='overview',
-                   style='padding-top:7px ; padding-bottom:7px ;',
-                    child=Image(
-                        name="overview",
-                        image_file="/home/geronimo/.config/hypr/icon/user-circle.png",
-                        size=38,
-                    ),
-
-                    on_clicked=lambda *_: self.run_overview_widget(),
-                ),
+            Box(name="pfp", size = (40, 60), style=f"background-image: url(\"file://{get_profile_picture_path() or ''}\")",),
             self.progress_container,
 
             Button(name='apps',
@@ -350,21 +372,31 @@ class SidePanel(Window):
                    style='padding-top:7px ; padding-bottom:7px ;',
                     child=Image(
                         name="apps",
-                        image_file="/home/geronimo/.config/hypr/icon/squares-four.png",
+                        image_file="/home/geronimo/.config/hypr/icon/browser.png",
                         size=38,
                     ),
 
-                    on_clicked=lambda *_: exec_shell_command("xdg-open https://www.google.com"),
+                    on_clicked=lambda *_: subprocess.Popen(["xdg-open", "https://www.google.com"]),
                 ),
             Button(name='wallpicker',
                    style='padding-top:7px ; padding-bottom:7px ;',
                     child=Image(
                         name="apps",
-                        image_file="/home/geronimo/.config/hypr/icon/squares-four.png",
+                        image_file="/home/geronimo/.config/hypr/icon/image.png",
                         size=38,
                     ),
 
-                    on_clicked=lambda *_: exec_shell_command("../run_wallpicker.sh"),
+                    on_clicked=lambda *_: self.toggle_window_wallpicker(),
+                ),
+            Button(name='wifi',
+                   style='padding-top:7px ; padding-bottom:7px ;',
+                    child=Image(
+                        name="apps",
+                        image_file="/home/geronimo/.config/hypr/icon/wifi.png",
+                        size=38,
+                    ),
+
+                    on_clicked=lambda *_: subprocess.Popen(["nm-connection-editor"]),
                 ),
             Button(name='powermenubutton',
                    style='padding-top:7px ; padding-bottom:7px ;',
@@ -403,6 +435,32 @@ class SidePanel(Window):
 
 
 ## some more functiona
+    def make_wallpaper_button(self, filepath):
+        button = Button(
+            name = "wallbutton",
+            child = Image(
+                image_file=filepath,
+                size=250,
+            ),
+            on_clicked = lambda *_: exec_shell_command(f"swww img {filepath} --transition-type center"),
+        )
+        return button
+    
+    def make_viewport(self, onlyfiles):
+        viewport = Box(name="viewport", orientation="v")
+        box = Box(orientation="h")
+        n = 0
+        for filepath in onlyfiles:
+            button = self.make_wallpaper_button(wallpapers_dir + "/" + filepath)
+            box.add(button)
+            n += 1
+            if n == 3:  # Reset after two buttons in a row
+                viewport.add(box)
+                box = Box(orientation="h")
+                n = 0
+        if len(box.get_children()) > 0:  # Add any remaining buttons
+            viewport.add(box)
+        return viewport
 
     def update_status(self):
         self.disk_progress.value = psutil.disk_usage('/home').percent
@@ -465,7 +523,17 @@ class SidePanel(Window):
         if self.window_power.is_visible(): self.window_power.hide()
         else: self.window_power.show()
 
+    def toggle_window_wallpicker(self):
+        if self.window_wallpicker.is_visible():
+            self.window_wallpicker.hide()
+        else:
+            self.window_wallpicker.show()
 
+    def toggle_window_wifi(self):
+        if self.network_window.is_visible():
+            self.network_window.hide()
+        else:
+            self.network_window.show()
 
     def arrange_viewport(self, query: str = ""):
         # reset everything so we can filter current viewport's slots...

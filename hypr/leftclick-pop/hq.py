@@ -61,7 +61,7 @@ print(parse_memory(output) )
 
 
 def get_profile_picture_path() -> str | None:
-    path = os.path.expanduser("~/.config/hypr/antman.png")
+    path = os.path.expanduser("~/.config/hypr/pfp.jpg")
     if not os.path.exists(path):
         path = os.path.expanduser("~/.face")
     if not os.path.exists(path):

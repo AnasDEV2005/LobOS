@@ -22,7 +22,7 @@ from fabric.utils import invoke_repeater, get_relative_path, exec_shell_command
 
 
 def get_profile_picture_path() -> str | None:
-    path = os.path.expanduser("~/.config/hypr/antman.png")
+    path = os.path.expanduser("~/.config/hypr/pfp.jpg")
     if not os.path.exists(path):
         path = os.path.expanduser("~/.face")
     if not os.path.exists(path):
@@ -34,7 +34,7 @@ def get_profile_picture_path() -> str | None:
 
 
 def get_bg_picture_path() -> str | None:
-    path = os.path.expanduser("~/.config/hypr/wallpape.jpg")
+    path = os.path.expanduser("~/.config/hypr/wallpapers/mountain.png")
     if not os.path.exists(path):
         path = os.path.expanduser("~/.face")
     if not os.path.exists(path):
@@ -66,9 +66,9 @@ class LockScreen(Window):
         self.connect("key-press-event", self.on_key_press)
         self.connect("key-release-event", self.on_key_release)
 
-        self.label = Label(name="lbl_title", label="VERIFY YOUR IDENTITY")
+        self.label = Label(name="lbl_title", label="LOGIN")
         self.entry = Entry(name="pass_entry", size=(2000, 2000), on_activate=self.on_activate)
-        self.pfp = Image(size=260, image_file=get_profile_picture_path())
+        self.pfp = Box(name="pfp", size = (250, 250), style=f"background-image: url(\"file://{get_profile_picture_path() or ''}\")",)
         self.pam_service = pam.pam()
 
         self.signals = Box(
@@ -94,7 +94,7 @@ class LockScreen(Window):
         self.box = Box(
             name="container",
             orientation="v",
-            spacing=23,
+            spacing=50,
             children=[self.pfp, self.label, self.signals],
             style=f"background-image: url(\"file://{get_bg_picture_path() or ''}\")",
         )

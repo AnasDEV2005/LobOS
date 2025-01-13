@@ -46,6 +46,17 @@
     padding: 18px;
 }
 
+#pfp {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100px;
+    padding: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+
 #inside-box {
     margin: 10px;
     padding : 13px;
@@ -173,6 +184,38 @@
 button:hover {
     background-color: var(--color2);
     transition: background-color 0.4s;
+}
+
+
+#window {
+    margin: 5px;
+    padding : 14px;
+    background-color: var(--background);
+}
+#scrolled-viewport {
+    border-color: var(--foreground);
+    border-width: 5px;
+    background: var(--background);
+    color: var(--color4);
+    border-radius: 1px;
+}
+#wallbutton {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+button:hover {
+    background-color: var(--color2);
+    transition: background-color 0.4s;
+}
+
+#appwindow{
+    margin: 20px;
+    padding : 200px;
+    border-color: var(--foreground);
+    border-width: 5px;
+    background: var(--background);
+    border-radius: 4px;
 }
 
 

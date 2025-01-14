@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PACKAGES=(
-    "hyprpaper"
+    "firefox"
     "hypridle"
     "neovim"
     "htop"
@@ -55,6 +55,8 @@ PACKAGES=(
     "alacritty"
     "dhcpcd"
     "swww-git"
+    "iwgtk"
+    "playerctl"
     # Add more packages here
 )
 

@@ -27,13 +27,7 @@ chmod +x ~/LobOS/zen-browser.AppImage
 sudo cp ~/LobOS/zen /usr/bin
 
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 
 
@@ -59,8 +53,8 @@ chmod +x ~/fabric/scripts/install_libcvc/install_libcvc.sh
 cd ~
 git clone https://github.com/AnasDEV2005/my-scripts.git
 cd my-scripts
-sudo cp ./gitscript usr/local/bin
-sudo cp ./stopwatch usr/local/bin
+sudo cp ./gitscript /usr/local/bin
+sudo cp ./stopwatch /usr/local/bin
 
 cd ~ 
 touch fabric-notes.txt 
@@ -81,7 +75,7 @@ sudo cp -r ~/LobOS/nvim ~/.config
 
 sudo cp -r ~/LobOS/neofetch ~/.config 
 
-sudo cp -r ~/LobOS/vesktop ~/.config
+sudo cp -r ~/LobOS/themes ~/.config/vesktop
 
 sudo rm /etc/sddm.conf.d
 sudo mkdir /etc/sddm.conf.d/
@@ -91,8 +85,8 @@ sudo cp -r ~/LobOS/newfont.ttf /usr/share/fonts
 
 echo "Verifying python packages"
 
-sudo chown -R $USER:$USER ~/.config/vesktop
-sudo chmod -R 700 ~/.config/vesktop
+sudo chown -R $USER:$USER ~/.config
+sudo chmod -R 700 ~/.config
 
 python -m ensurepip --upgrade
 source ~/.config/hypr/fabric-venv/bin/activate
@@ -113,5 +107,12 @@ echo "3"
 echo "2"
 echo "1"
 echo "Done!"
-echo "You can now reboot."
 
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

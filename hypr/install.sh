@@ -2,6 +2,7 @@
 
 
 
+
 echo "This install script is only made for Arch Linux, possibly also Arch-based distros"
 
 

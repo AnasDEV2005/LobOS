@@ -29,9 +29,8 @@ from gi.repository import Gtk
 from wallpicker import Wallpicker    
 from os import listdir
 from os.path import isfile, join, expanduser
-from NetworkManager import NetworkManager
-
-
+import NetworkManager
+from NetworkManager import *
 wallpapers_dir = expanduser("~/.config/hypr/wallpapers")
 
 onlyfiles = [f for f in listdir(wallpapers_dir) if isfile(join(wallpapers_dir, f))]
@@ -56,7 +55,7 @@ def run_overview_widget():
 
 
 #### S I D E   P A N E L ####
-
+# i mean its more like a bar but we ball 
 
 class SidePanel(Window):
     @staticmethod
@@ -161,20 +160,21 @@ class SidePanel(Window):
                 ),
             ],
         )
-##################### TOOLS  ########################################################################
 
-        self.textview = Gtk.TextView()
-        self.textview.set_size_request(300, 800)
+##################### TOOLS  ########################################################################
 
 ## NOTES
 ############################################################
-        
+
+        self.textview = Gtk.TextView()
+        self.textview.set_size_request(300, 800)
+ 
         self.note = Box(
             name='notes',
             spacing = 15,
             orientation = "v",
             children = [
-                Label(label="NOTES", style="font-size: 50px;"),
+                Label(label="NOTES", name="note-title", style="font-size: 50px;"),
                 Box(
                     style = "padding: 28px;",
                     children = [ self.textview,],
@@ -189,7 +189,6 @@ class SidePanel(Window):
 
         self.load_notes()
 
-
         self.window_note = Window(
                 name="window-inner",
                 layer="overlay",
@@ -203,9 +202,11 @@ class SidePanel(Window):
                 size=(300, 800),
                 child=self.note,
             )
+
         self.window_note.add_keybinding("Ctrl s", self.save_notes)
 
         self.window_note.hide()
+
 ## POWER MENU
 #############################################################
         self.powermenu = Box(
@@ -309,6 +310,7 @@ class SidePanel(Window):
 ## WIFI MANAGER
 #############################################################################
 
+
 ## WALLPAPER PICKER
 #############################################################################
         onlyfiles = [f for f in listdir(wallpapers_dir) if isfile(join(wallpapers_dir, f))]
@@ -396,7 +398,7 @@ class SidePanel(Window):
                         size=38,
                     ),
 
-                    on_clicked=lambda *_: subprocess.Popen(["nm-connection-editor"]),
+                    on_clicked=lambda *_: subprocess.Popen(["iwgtk"]),
                 ),
             Button(name='powermenubutton',
                    style='padding-top:7px ; padding-bottom:7px ;',
@@ -434,7 +436,9 @@ class SidePanel(Window):
 
 
 
-## some more functiona
+## methods
+    
+    # wallpaper picker methods
     def make_wallpaper_button(self, filepath):
         button = Button(
             name = "wallbutton",
@@ -462,6 +466,7 @@ class SidePanel(Window):
             viewport.add(box)
         return viewport
 
+    # progress bars methods
     def update_status(self):
         self.disk_progress.value = psutil.disk_usage('/home').percent
         self.ram_progress.value = psutil.virtual_memory().percent
@@ -472,14 +477,7 @@ class SidePanel(Window):
 
         return True
 
-    def get_current_uptime(self):
-        uptime = time.time() - psutil.boot_time()
-        uptime_days, remainder = divmod(uptime, 86400)
-        uptime_hours, remainder = divmod(remainder, 3600)
-        # uptime_minutes, _ = divmod(remainder, 60)
-        return f"{int(uptime_days)} {'days' if uptime_days > 0 else 'day'}, {int(uptime_hours)} {'hours' if uptime_hours > 1 else 'hour'}"
-    
-
+    # notes methods
     def save_notes(self, *args):
         buffer = self.textview.get_buffer()
         
@@ -504,7 +502,7 @@ class SidePanel(Window):
         except Exception as e:
             print(f"Error reading file: {e}")
 
-
+    # tool toggling methods
     def toggle_window_note(self):
         if self.window_note.is_visible(): self.window_note.hide()
         elif self.window_apps.is_visible(): 
@@ -535,6 +533,7 @@ class SidePanel(Window):
         else:
             self.network_window.show()
 
+    # app launcher methods
     def arrange_viewport(self, query: str = ""):
         # reset everything so we can filter current viewport's slots...
         # remove the old handler so we can avoid race conditions
@@ -604,7 +603,7 @@ class SidePanel(Window):
             **kwargs,
         )                
         
-
+# run app
 if __name__ == "__main__":
     side_panel = SidePanel()
     app = Application("side-panel", side_panel)

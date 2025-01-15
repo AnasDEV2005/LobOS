@@ -4,3 +4,5 @@ cp -r ~/.config/neofetch .
 cp -r ~/.config/vesktop .
 cp -r ~/.config/zellij .
 cp -r ~/.zshrc .
+bfdbd
+

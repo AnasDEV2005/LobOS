@@ -42,8 +42,16 @@
     padding: 10px;
 }
 
+#pfp-container {
+    border-radius: 200px;
+}
+
 #save-button {
     padding: 18px;
+}
+
+#note-title {
+    padding: 15px;
 }
 
 #pfp {

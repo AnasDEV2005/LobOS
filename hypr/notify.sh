@@ -8,7 +8,7 @@ NOTIFY_MESSAGE="kek lolololo"
 # Check if launched from terminal, keybinding, or rofi
 if [[ -n $(tty | grep "^/dev/pts") ]]; then
   # Launched from terminal
-  NOTIFY_MESSAGE="RYUUUUULaunched from terminal"
+  NOTIFY_MESSAGE="Test notificationnnnnnn !! wawawa"
 
 fi
 

@@ -10,6 +10,8 @@ scrollback_editor "/usr/bin/nvim"
 
 
 
+
+
 themes {
     default {
         fg "#69C3FF"

@@ -1,4 +1,5 @@
 from pynput import keyboard
+from fabric import Fabricator
 import os
 import time
 import psutil
@@ -22,7 +23,7 @@ from fabric.widgets.entry import Entry
 from fabric.widgets.scrolledwindow import ScrolledWindow
 from fabric.utils import DesktopApp, get_desktop_applications, idle_add, exec_shell_command, get_relative_path
 from fabric.utils import invoke_repeater
-
+from cava import cava_widget
 
 memory = []
 
@@ -219,6 +220,31 @@ class Overview(Window):
                     on_clicked=lambda *_: exec_shell_command('playerctl next'),
                 ),
         )
+
+        self.cava = Box(spacing=1, children=[Box() for i in range(28)]).build(
+              lambda box, _: Fabricator(
+                  poll_from=f"cava -p {get_relative_path('./cava.ini')}",
+                  interval=0,
+                  stream=True,
+                  on_changed=lambda f, line: [
+                      child.set_style(
+                          f"* {{ margin-top: {26 - value}px; }}",
+                          compile=False,
+                          add_brackets=False,
+                      )
+                      for value, child in zip(
+                          [
+                              int(val)
+                              for val in line.rstrip(";")
+                              .lstrip(";")
+                              .split(";")
+                          ],
+                          box.children,
+                      )
+                  ],
+              )
+            )
+
         self.media_player = Box(name="media-player",
                     orientation="v",
                     children= [
@@ -230,8 +256,10 @@ class Overview(Window):
                             style="margin-top: 4px;",
                         ),
                         self.media_buttons,
+                        self.cava,
                     ]
                 )
+
 
         self.bottom = Box(
             orientation="h",

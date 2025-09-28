@@ -385,7 +385,7 @@ class SidePanel(Window):
                         size=38,
                     ),
 
-                    on_clicked=lambda *_: subprocess.Popen(["iwgtk"]),
+                    on_clicked=lambda *_: subprocess.Popen(["/home/geronimo/Downloads/Freeter-2.7.1-beta-linux-x64/Freeter-2.7.1-beta-linux-x64/freeter"]),
                 ),
             Button(name='powermenubutton',
                    style='padding-top:7px ; padding-bottom:7px ;',

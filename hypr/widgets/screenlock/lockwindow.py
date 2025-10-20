@@ -57,7 +57,7 @@ class LockScreen(Window):
 
 
 
-       # self.add_keybinding("Ctrl w", self.quit_window)
+        self.add_keybinding("Ctrl w", self.quit_window)
         
 
 
@@ -134,7 +134,7 @@ class LockScreen(Window):
             self.signals.children[i].add_style_class("no-signal")
 
     def authenticate(self, password):
-        return password == "Anas2005"  # placeholder dammit
+        return password == "1234"  # placeholder dammit
 
     def fade_out(self):
         self.add_style_class("fade-out")

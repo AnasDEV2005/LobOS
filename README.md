@@ -16,20 +16,28 @@
 <br>
 
 install swww from aur extas/ in order for wallpaper to work
+<br>
 put pfp in ~/.config/hypr/pfp.png
+<br>
 and desktop wallpapers are to be put in ~/wallpapers/
+<br>
 as for the lock screen wallpaper it should be in ~/wallpapers/Wallpaper.jpg
+<br>
 that, or edit the path in ~/.config/hypr/widgets/sidepanel.py
-also edit the password i forgor the file path just tinker around the widgets lol (probably hypr/lockscreen/password.txt)
+<br>
+also edit the password, its hardcoded in lockscreen.py or something (my bad okay i couldnt get pam to work). If you ever find yourself stuck, the default pass is 1234, or ctrl+w to close the lockscreen. (You should probably change that too, comment out the line that has ctrl+w and keybinding in it (I trust you know how to read)).
+<br>
+<br>
+<br>
 
 if you left click above the bar it'll show ram and ssd usage info
 
 
-</br>
+<br>
 
 
 
-
+---
 
 
 

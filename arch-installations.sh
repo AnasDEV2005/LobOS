@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PACKAGES=(
+    "lutris"
     "firefox"
     "hypridle"
     "neovim"
@@ -54,9 +55,10 @@ PACKAGES=(
     "wayvibes-git"
     "alacritty"
     "dhcpcd"
-    "swww-git"
+    "swww"
     "iwgtk"
     "playerctl"
+    "bartib"
     # Add more packages here
 )
 
@@ -97,4 +99,49 @@ main() {
     echo "All done!"
 }
 
-main
+main 
+
+# Enable and start daemons for installed packages
+
+# System services
+declare -A SYSTEM_SERVICES=(
+    [auto-cpufreq]="auto-cpufreq"
+    [dhcpcd]="dhcpcd"
+    [virtualbox]="vboxservice"
+)
+
+# User (session) daemons
+USER_DAEMONS=(
+    "swww"
+)
+
+echo "🔍 Checking and enabling system daemons..."
+for pkg in "${!SYSTEM_SERVICES[@]}"; do
+    service="${SYSTEM_SERVICES[$pkg]}"
+
+    if pacman -Qi "$pkg" &>/dev/null; then
+        echo "✅ Found $pkg — enabling $service.service..."
+        sudo systemctl enable "$service.service"
+        sudo systemctl start "$service.service"
+    else
+        echo "⚠️  Package $pkg not installed, skipping system service."
+    fi
+done
+
+echo
+echo "👤 Starting user daemons..."
+for daemon in "${USER_DAEMONS[@]}"; do
+    if pacman -Qi "$daemon" &>/dev/null; then
+        if ! pgrep -x "${daemon}-daemon" &>/dev/null; then
+            echo "✅ Launching ${daemon}-daemon..."
+            "${daemon}-daemon" &
+        else
+            echo "ℹ️  ${daemon}-daemon already running."
+        fi
+    else
+        echo "⚠️  Package $daemon not installed, skipping user daemon."
+    fi
+done
+
+echo
+echo "🎉 Done! All relevant services and daemons are now active."

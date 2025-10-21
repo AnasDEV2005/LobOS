@@ -23,8 +23,6 @@ chmod +x ./arch-installations.sh
 
 curl -L -o ~/LobOS/zen-browser.AppImage https://github.com/ZenBrowser/ZenBrowser/releases/download/v1.0/zen-browser-x86_64.AppImage
 
-chmod +x ~/LobOS/zen-browser.AppImage
-sudo cp ~/LobOS/zen /usr/bin
 
 
 
@@ -53,8 +51,8 @@ chmod +x ~/fabric/scripts/install_libcvc/install_libcvc.sh
 cd ~
 git clone https://github.com/AnasDEV2005/my-scripts.git
 cd my-scripts
-sudo cp ./gitscript /usr/local/bin
-sudo cp ./stopwatch /usr/local/bin
+sudo cp ./* /usr/local/bin
+
 
 cd ~ 
 touch fabric-notes.txt 
@@ -73,7 +71,7 @@ sudo cp -r ~/LobOS/alacritty ~/.config
 
 sudo cp -r ~/LobOS/nvim ~/.config
 
-sudo cp -r ~/LobOS/neofetch ~/.config 
+sudo mv -r ~/LobOS/neofetch1 ~/.config/neofetch 
 
 sudo cp -r ~/LobOS/themes ~/.config/vesktop
 

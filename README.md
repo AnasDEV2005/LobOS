@@ -30,7 +30,7 @@ also edit the password, its hardcoded in lockscreen.py or something (my bad okay
 <br>
 <br>
 
-if you left click above the bar it'll show ram and ssd usage info
+if you right click above the bar it'll show ram and ssd usage info
 
 
 <br>

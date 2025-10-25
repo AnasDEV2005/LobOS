@@ -67,7 +67,7 @@ chmod +x other_distro_install.sh
 </br>
 
 > [!NOTE]
-> The `arch_installations.sh` script contains the necessary dependencies, and more AUR applications that are my personal installations.
+> The `packages.sh` file contains the necessary dependencies, and more AUR applications that are my personal installations.
 I only commented out the unnecessary packages, so feel free to uncomment the ones you want installed.
 
 # Further Instructions

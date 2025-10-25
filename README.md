@@ -2,10 +2,10 @@
 <p align="center">
         <img src="https://readme-typing-svg.demolab.com/?font=Noto-Sans%20CF%20Italic&weight=700&size=56&duration=1000&pause=0&color=1c24338&background=69C3FFE&center=true&vCenter=true&width=600&height=150&repeat=false&lines=LobOS"><br/>
 <br>
-        <img src="https://img.shields.io/badge/WM-Hyprland-blue?colorA=00070B&colorB=F26E74&style=for-the-badge" />
-        <img src="https://img.shields.io/badge/WIDGETS-Fabric-blue?colorA=00070B&colorB=78B8A2&style=for-the-badge" />
-        <img src="https://img.shields.io/badge/EDITOR-Neovim-blue?colorA=00070B&colorB=C488EC&style=for-the-badge" />
-        <img src="https://img.shields.io/badge/SHELL-zsh-blue?colorA=00070B&colorB=6791C9&style=for-the-badge" /> <br>
+        <img src="https://img.shields.io/badge/WM-Hyprland-blue?colorA=69C3FFE&colorB=1c24338&style=for-the-badge" />
+        <img src="https://img.shields.io/badge/WIDGETS-Fabric-blue?colorA=69C3FFE&colorB=3CEC85&style=for-the-badge" />
+        <img src="https://img.shields.io/badge/EDITOR-Neovim-blue?colorA=69C3FFE&colorB=B78AFF&style=for-the-badge" />
+        <img src="https://img.shields.io/badge/SHELL-zsh-blue?colorA=69C3FFE&colorB=08bdba&style=for-the-badge" /> <br>
 
 <p align="center">
 <img src="./demo.png" >
@@ -50,7 +50,7 @@
 > Please keep in mind this was made for the Arch Linux distro, so its stability is not guaranteed and will probabky require your manual intervention occasionally. 
 
 </br>
-Simply clone the repo, make *install.sh* executable, and execute it.
+Simply clone the repo, make *install.sh* executable, and execute it.  
 
 ```bash
 git clone https://github.com/AnasDEV2005/LobOS.git

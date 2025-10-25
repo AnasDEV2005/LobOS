@@ -51,7 +51,7 @@
 > Please keep in mind this was made for the Arch Linux distro, so its stability is not guaranteed and will probably require your manual intervention occasionally. 
 
 </br>
-Simply clone the repo, make *install.sh* executable, and execute it.  
+Simply clone the repo, make install.sh executable, and execute it.  
 
 ```bash
 git clone https://github.com/AnasDEV2005/LobOS.git

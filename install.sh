@@ -2,7 +2,7 @@
 
 
 
-echo "This install script is only made for Arch Linux, possibly also Arch-based distros"
+echo "This install script is mostly made for Arch Linux, or anything with a similar file structure"
 
 
 sudo pacman -Syuu
@@ -21,9 +21,11 @@ echo "Proceeding to install packages and dependencies"
 chmod +x ./arch-installations.sh
 ./arch-installations.sh
 
-curl -L -o ~/LobOS/zen-browser.AppImage https://github.com/ZenBrowser/ZenBrowser/releases/download/v1.0/zen-browser-x86_64.AppImage
 
 
+
+# curl -L -o Tahoma2D_1.5.2.AppImage \
+     # https://github.com/tahoma2d/tahoma2d/releases/download/v1.5.2/Tahoma2D_1.5.2_amd64.AppImage
 
 
 

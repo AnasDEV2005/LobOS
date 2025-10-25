@@ -2,7 +2,7 @@
 <p align="center">
         <img src="https://readme-typing-svg.demolab.com/?font=Noto-Sans%20CF%20Italic&weight=700&size=56&duration=1000&pause=0&color=1c24338&background=69C3FFE&center=true&vCenter=true&width=600&height=150&repeat=false&lines=LobOS"><br/>
 <br>
-        <img src="https://img.shields.io/badge/WM-Hyprland-blue?colorA=69C3FFE&colorB=1c24338&style=for-the-badge" />
+        <img src="https://img.shields.io/badge/WM-Hyprland-blue?colorA=69C3FFE&colorB=22ECDB&style=for-the-badge" />
         <img src="https://img.shields.io/badge/WIDGETS-Fabric-blue?colorA=69C3FFE&colorB=3CEC85&style=for-the-badge" />
         <img src="https://img.shields.io/badge/EDITOR-Neovim-blue?colorA=69C3FFE&colorB=B78AFF&style=for-the-badge" />
         <img src="https://img.shields.io/badge/SHELL-zsh-blue?colorA=69C3FFE&colorB=08bdba&style=for-the-badge" /> <br>
@@ -12,11 +12,6 @@
 
 ---
     
-
-###  Demo
-
- 
----
 
 # File structure:
 
@@ -33,6 +28,12 @@
 ####  📁 zellij/ my zellij config 
 
 ---
+
+
+
+###  Demo
+
+ 
 
 </br>   
 <p align="center">

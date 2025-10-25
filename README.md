@@ -2,10 +2,10 @@
 <p align="center">
         <img src="https://readme-typing-svg.demolab.com/?font=Noto-Sans%20CF%20Italic&weight=700&size=56&duration=1000&pause=0&color=1c24338&background=69C3FFE&center=true&vCenter=true&width=600&height=150&repeat=false&lines=LobOS"><br/>
 <br>
-        <img src="https://img.shields.io/badge/WM-Hyprland-blue?colorA=69C3FFE&colorB=22ECDB&style=for-the-badge" />
-        <img src="https://img.shields.io/badge/WIDGETS-Fabric-blue?colorA=69C3FFE&colorB=3CEC85&style=for-the-badge" />
-        <img src="https://img.shields.io/badge/EDITOR-Neovim-blue?colorA=69C3FFE&colorB=B78AFF&style=for-the-badge" />
-        <img src="https://img.shields.io/badge/SHELL-zsh-blue?colorA=69C3FFE&colorB=08bdba&style=for-the-badge" /> <br>
+        <img src="https://img.shields.io/badge/WM-Hyprland-blue?colorA=1c2433&colorB=22ECDB&style=for-the-badge" />
+        <img src="https://img.shields.io/badge/WIDGETS-Fabric-blue?colorA=1c2433&colorB=3CEC85&style=for-the-badge" />
+        <img src="https://img.shields.io/badge/EDITOR-Neovim-blue?colorA=1c2433&colorB=B78AFF&style=for-the-badge" />
+        <img src="https://img.shields.io/badge/SHELL-zsh-blue?colorA=1c2433&colorB=08bdba&style=for-the-badge" /> <br>
 
 <p align="center">
 <img src="./demo.png" >
@@ -48,7 +48,7 @@
 # Installation
 
 > [!WARNING]
-> Please keep in mind this was made for the Arch Linux distro, so its stability is not guaranteed and will probabky require your manual intervention occasionally. 
+> Please keep in mind this was made for the Arch Linux distro, so its stability is not guaranteed and will probably require your manual intervention occasionally. 
 
 </br>
 Simply clone the repo, make *install.sh* executable, and execute it.  
@@ -57,8 +57,13 @@ Simply clone the repo, make *install.sh* executable, and execute it.
 git clone https://github.com/AnasDEV2005/LobOS.git
 cd LobOS
 chmod +x install.sh 
-./install.sh 
+./install.sh
+
+# or for other distros, modify the ./other_distro_install.sh file accordingly, then:
+chmod +x other_distro_install.sh 
+./other_distro_install.sh
 ```
+
 </br>
 
 > [!NOTE]
@@ -87,11 +92,12 @@ The lock screen wallpaper should be in *~/wallpapers/Wallpaper.jpg*
 > [!NOTE]
 > The lockscreen password is hardcoded inside `hypr/widgets/lockscreen/lockwindow.py`. The default password is 1234.
 
->[!TIP]
+>[!NOTE]
 >The ctrl+w keybinding is set to bail you out until you comment it out in the same file.
 
 
-If you right click above the bar or in an empty space on the screen, it'll show a panel containing ram and ssd usage info, and visually incomplete but functional video/audio player controls.
+>[!NOTE]
+>If you right click above the bar or in an empty space on the screen, it'll show a panel containing ram and ssd usage info, and visually incomplete but functional video/audio player controls.
 
 </br>
 

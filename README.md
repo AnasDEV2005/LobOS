@@ -8,8 +8,8 @@
         <img src="https://img.shields.io/badge/SHELL-zsh-blue?colorA=00070B&colorB=6791C9&style=for-the-badge" /> <br>
 
 <p align="center">
-<img src="">
-http://canary.discord.com/channels/647981638348832790/677869233803100171details>
+<img src="https://canary.discord.com/channels/647981638348832790/677869233803100171details" >
+<a href="https://ibb.co/W44Mfcgx"><img src="https://i.ibb.co/bMMCXrzW/6565d8f9-de0f-4b76-b475-bb38ec1cf05a-1.png" alt="6565d8f9-de0f-4b76-b475-bb38ec1cf05a-1" border="0"></a>
 </p>
 
 

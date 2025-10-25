@@ -50,7 +50,7 @@
 > Please keep in mind this was made for the Arch Linux distro, so its stability is not guaranteed and will probabky require your manual intervention occasionally. 
 
 </br>
-Simply clone the repo, make ``install.sh`` executable, and execute it.
+Simply clone the repo, make *install.sh* executable, and execute it.
 
 ```bash
 git clone https://github.com/AnasDEV2005/LobOS.git
@@ -73,9 +73,9 @@ cp [YOUR_PFP_PATH] ~/.config/hypr/pfp.jpg
 ```
 </br>  
 
-Any desktop wallpapers you download need to be put in ``~/wallpapers`` and they will be loaded in the wallpaper picker when the hyprland session is restarted.</br>
+Any desktop wallpapers you download need to be put in *~/wallpapers* and they will be loaded in the wallpaper picker when the hyprland session is restarted.</br>
 
-The lock screen wallpaper should be in ~/wallpapers/Wallpaper.jpg
+The lock screen wallpaper should be in *~/wallpapers/Wallpaper.jpg*
 
 > [!NOTE]
 > The `ctrl+L` keybinding allows you to lock the screen at any point during a session. Can be configured in `hyprland.conf`

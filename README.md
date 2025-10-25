@@ -1,6 +1,6 @@
 
 <p align="center">
-        <img src="https://readme-typing-svg.demolab.com/?font=Cartograph%20CF%20Italic&weight=700&size=56&duration=1000&pause=0&color=1c24338&background=69C3FFE&center=true&vCenter=true&width=600&height=150&repeat=false&lines=LobOS"><br/>
+        <img src="https://readme-typing-svg.demolab.com/?font=NotoSans%20CF%20Italic&weight=700&size=56&duration=1000&pause=0&color=1c24338&background=69C3FFE&center=true&vCenter=true&width=600&height=150&repeat=false&lines=LobOS"><br/>
 <br>
         <img src="https://img.shields.io/badge/WM-Hyprland-blue?colorA=00070B&colorB=F26E74&style=for-the-badge" />
         <img src="https://img.shields.io/badge/WIDGETS-Fabric-blue?colorA=00070B&colorB=78B8A2&style=for-the-badge" />

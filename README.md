@@ -1,6 +1,6 @@
 
 <p align="center">
-        <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Comfortaa&weight=700&size=80&pause=1000&color=1c24338&background=69C3FFE&center=true&vCenter=true&height=500&width=1000&lines=LobOS" alt="Typing SVG" /></a>
+        <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Comfortaa&weight=700&size=80&pause=1000&color=1c24338&background=69C3FFE&center=true&vCenter=true&height=200&width=1000&lines=LobOS" alt="Typing SVG" /></a>
 
 <br>
         <img src="https://img.shields.io/badge/WM-Hyprland-blue?colorA=1c2433&colorB=22ECDB&style=for-the-badge" />

@@ -1,0 +1,28 @@
+
+window {
+    background: #181825;
+    color: #ffffff;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.time-display {
+    font-size: 48px;
+    font-weight: bold;
+    color: #89b4fa;
+}
+
+.control-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: #313244;
+    color: #cdd6f4;
+}
+
+.control-button:hover {
+    background: #45475a;
+}
+
+.control-button:active {
+    background: #585b70;
+}

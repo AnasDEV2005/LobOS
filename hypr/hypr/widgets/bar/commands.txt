@@ -1,0 +1,7 @@
+1, set "command" "shortcut"
+2, sh "command"
+3, w #browser
+4, q #wifi
+5, a #applauncher
+
+

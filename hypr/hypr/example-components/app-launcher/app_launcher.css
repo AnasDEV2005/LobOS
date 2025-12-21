@@ -1,0 +1,73 @@
+/* we can use webcss variables, fabric compiles that to gtk css.
+   global variables can be stored in :vars */
+   
+
+   :vars {
+    --background: #2e4954;
+    --foreground: #63d0ff;
+    --color0: #150d16;
+    --color1: #7794c9;
+    --color2: #9C5995;
+    --color3: #5c9aab;
+    --color4: #9A62F3;
+    --color5: #E075DF;
+    --color6: #F98F9F;
+    --color7: #f5dbc4;
+    --color8: #9dc7e0;
+    --color9: #244a4f;
+    --color10: #9C5995;
+    --color11: #69edff;
+    --color12: #7794c9;
+    --color13: #E075DF;
+    --color14: #F98F9F;
+    --color15: #f5dbc4;
+    --window-bg: alpha(var(--background), 0.6);
+    --module-bg: alpha(var(--background), 0.4);
+    --border-color: var(--color11);
+    --ws-active: var(--color9);
+    --ws-inactive: var(--color3);
+    --ws-empty: var(--color8);
+    --ws-hover: var(--color1);
+    --ws-urgent: var(--color12);
+}
+
+/* unset so we can style everything from the ground up. */
+* {
+    all: unset;
+    color: var(--foreground);
+    font-size: 16px;
+    font-family: "Jost*", sans-serif;
+    border-radius: 25px;
+}
+
+#appslot {
+    padding: 15px;
+    background-color: #142329;
+}
+
+#search {
+    padding: 15px;
+    background-color: #30383b;
+}
+
+#viewport {
+    padding: 15px;
+    background-color: rgba(33, 43, 46, 0.473);
+}
+
+#appslot:hover {
+    background-color: #22343d;
+}
+
+button:hover {
+    background-color: #142129;
+}
+
+#appwindow {
+    padding: 15px;
+    background-color: rgba(33, 44, 46, 0.473);
+}
+
+#appslauncher {
+    padding: 15px;
+}

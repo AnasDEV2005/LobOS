@@ -1,0 +1,105 @@
+:vars {
+    --background: #1c2433;
+    --foreground: #69C3FF;
+    --color0:#1c2433;
+    --color1: #262e3d;
+    --color2: #303847;
+    --color3: #444c5b;
+    --color4: #a1adb7;
+    --color5: #c3cfd9;
+    --color6: #ABB7C1;
+    --color7: #08bdba;
+    --color8: #FF738A;
+    --color9: #FF955C;
+    --color10: #EACD61;
+    --color11: #3CEC85;
+    --color12: #77aed7;
+    --color13: #69C3FF;
+    --color14: #22ECDB;
+    --color15: #B78AFF;
+    --window-bg: alpha(var(--background), 0.9);
+    --module-bg: alpha(var(--background), 0.8);
+    --border-color: var(--foreground);
+
+}
+
+* {
+    all: unset;
+    font-family: "newfont";
+
+    color: var(--foreground);
+}
+
+#entrybox {
+    color: alpha( var(--foreground), 1);
+}
+
+#pass_entry {
+    color: alpha( var(--foreground), 1 );
+    font-size: 0px;
+}
+
+
+#main-window {
+    opacity: 0;
+}
+
+#main-window.visible {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;   
+}
+
+#main-window.fade-out {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;   
+}
+
+
+
+
+#container {
+    padding-top: 200px;
+    font-weight: 900;
+    font-size: 50px;
+}
+
+#pfp {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 500px;
+    padding: 32px;
+    margin-right: 835px;
+    margin-left: 835px;
+
+}
+
+
+#signals {
+  margin-left:725px;
+}
+
+
+
+.no-signal {
+  background-color: alpha( var(--foreground), 0 ); 
+  border-radius: 100px;
+}
+
+.typing-signal {
+  background-color: alpha( var(--foreground), 1 ); 
+  border-radius: 100px;
+}
+.incorrect-signal {
+  background-color:alpha( #D22B2B, 1 ); 
+  border-radius: 100px;
+}
+.correct-signal {
+  background-color: alpha( #50C878, 1 ); 
+  border-radius: 100px;
+}
+
+
+
+
+

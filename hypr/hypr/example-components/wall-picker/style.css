@@ -1,0 +1,78 @@
+:vars {
+    --background: #1c2433;
+    --foreground: #69C3FF;
+    --color0:#1c2433;
+    --color1: #262e3d;
+    --color2: #303847;
+    --color3: #444c5b;
+    --color4: #a1adb7;
+    --color5: #c3cfd9;
+    --color6: #ABB7C1;
+    --color7: #08bdba;
+    --color8: #FF738A;
+    --color9: #FF955C;
+    --color10: #EACD61;
+    --color11: #3CEC85;
+    --color12: #77aed7;
+    --color13: #69C3FF;
+    --color14: #22ECDB;
+    --color15: #B78AFF;
+    --window-bg: alpha(var(--background), 0.9);
+    --module-bg: alpha(var(--background), 0.8);
+    --border-color: var(--foreground);
+}
+
+* {
+    all: unset;
+    font-family: "newfont";
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--foreground);
+}
+
+
+#window {
+    margin: 5px;
+    padding : 14px;
+    background-color: var(--background);
+}
+#scrolled-viewport {
+    border-color: var(--foreground);
+    border-width: 5px;
+    background: var(--background);
+    color: var(--color4);
+    border-radius: 1px;
+}
+#wallbutton {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+button:hover {
+    background-color: var(--color2);
+    transition: background-color 0.4s;
+}
+
+#appwindow{
+    margin: 20px;
+    padding : 200px;
+    border-color: var(--foreground);
+    border-width: 5px;
+    background: var(--background);
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

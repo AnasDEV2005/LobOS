@@ -1,0 +1,89 @@
+##[pylyzer] failed /home/geronimo/.config/hypr/side-panel/header.py 1732043784 4828
+.os = pyimport "<failure>"
+.<failure> = pyimport "<failure>"
+
+.time = pyimport "<failure>"
+
+
+.psutil = pyimport "__init__"
+.__init__ = pyimport "__init__"
+
+.operator = pyimport "<failure>"
+
+
+.___v_desugar_1 = pyimport "<failure>"
+
+.Iterator: Never
+.___v_desugar_2 = pyimport "__init__"
+
+_logger = pyimport "_logger"
+.logger: _logger.Logger
+.___v_desugar_3 = pyimport "<failure>"
+
+.Application: Never
+.___v_desugar_4 = pyimport "<failure>"
+
+.Box: Never
+.___v_desugar_5 = pyimport "<failure>"
+
+.Label: Never
+.___v_desugar_6 = pyimport "<failure>"
+
+.Overlay: Never
+.___v_desugar_7 = pyimport "<failure>"
+
+.DateTime: Never
+.___v_desugar_8 = pyimport "<failure>"
+
+.CircularProgressBar: Never
+.___v_desugar_9 = pyimport "<failure>"
+
+.Window: Never
+.___v_desugar_10 = pyimport "<failure>"
+
+.WebView: Never
+.___v_desugar_11 = pyimport "<failure>"
+
+.Stack: Never
+.___v_desugar_12 = pyimport "<failure>"
+
+.Button: Never
+.___v_desugar_13 = pyimport "<failure>"
+
+.Image: Never
+.___v_desugar_14 = pyimport "<failure>"
+
+.Entry: Never
+.___v_desugar_15 = pyimport "<failure>"
+
+.ScrolledWindow: Never
+.___v_desugar_16 = pyimport "<failure>"
+
+.DesktopApp: Never
+.get_desktop_applications: Never
+.idle_add: Never
+.remove_handler: Never
+.get_relative_path: Never
+.___v_desugar_17 = pyimport "<failure>"
+
+.invoke_repeater: Never
+.get_relative_path: Never
+.get_profile_picture_path: () -> NoneType or Str
+.Overview: ClassType
+.Overview <: Never
+.Overview.close_butt: Never
+.Overview.uptime_label: Never
+.Overview.header: Never
+.Overview.profile_pic: Never
+.Overview.__call__: (**kwargs := Type_28523) -> header.Overview
+.Overview.bake_progress_bar: (name: Str := Str, size: Int := Int, **kwargs := Type_28526) -> Never
+.Overview.bake_bat_bar: (name: Str := Str, size: Int := Int, **kwargs := Type_28530) -> Never
+.Overview.bake_disk_bar: (name: Str := Str, size: Int := Int, **kwargs := Type_28534) -> Never
+.Overview.bake_progress_icon: (**kwargs := Type_28536) -> Never
+.Overview.hideall: (self: header.Overview) -> Never
+.Overview.is_visibl: (self: header.Overview) -> Never
+.Overview.close_widget: (self: Never) -> NoneType
+.Overview.update_status: (self: header.Overview) -> {True}
+.Overview.get_current_uptime: (self: header.Overview) -> Str
+
+

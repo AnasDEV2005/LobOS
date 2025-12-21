@@ -1,0 +1,360 @@
+:vars {
+    --background: #1c2433;
+    --foreground: #69C3FF;
+    --color0:#1c2433;
+    --color1: #262e3d;
+    --color2: #303847;
+    --color3: #444c5b;
+    --color4: #a1adb7;
+    --color5: #c3cfd9;
+    --color6: #ABB7C1;
+    --color7: #08bdba;
+    --color8: #FF738A;
+    --color9: #FF955C;
+    --color10: #EACD61;
+    --color11: #3CEC85;
+    --color12: #77aed7;
+    --color13: #69C3FF;
+    --color14: #22ECDB;
+    --color15: #B78AFF;
+    --window-bg: alpha(var(--background), 0.9);
+    --module-bg: alpha(var(--background), 0.8);
+    --border-color: var(--foreground);
+}
+
+* {
+    all: unset;
+    font-family: "newfont";
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--foreground);
+}
+
+#window-inner {
+
+    border-right: solid 1px var(--foreground);
+    border-top: solid 1px var(--foreground);
+    border-bottom: solid 1px var(--foreground);
+    background: linear-gradient(90deg,
+            alpha(#182024, 0.9),
+            alpha(var(--background), 0.9),
+            var(--module-bg));
+    padding: 10px;
+}
+
+#pfp-container {
+    border-radius: 200px;
+}
+
+#save-button {
+    padding: 18px;
+}
+
+#note-title {
+    padding: 15px;
+}
+
+#pfp {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100px;
+    padding: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+
+#inside-box {
+    margin: 10px;
+    padding : 13px;
+    border-color: var(--foreground);
+    border-width: 2px;
+    background-color: var(--background);
+    border-radius: 2px;
+}
+
+#memlabels {
+    font-weight: 500;
+    font-size: 14px;
+
+}
+
+#powermenu {
+    border-color: var(--foreground);
+    background: alpha(var(--background), 1);
+    border-radius: 2px;
+    padding: 20px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+#date-time>label {
+    font-weight: 900;
+    font-size: 28px;
+}
+
+#x {
+  font-size: 30px;
+}
+
+#close-header {
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 600px;
+}
+
+#mem-bar {
+    color: var(--module-bg);
+    background-color: var(--color12);
+    border: solid 10px var(--foreground);
+}
+
+#hq {
+    padding: 16px;
+    border: solid 1px var(--border-color);
+    border-radius: 1px;
+    background: var(--module-bg);
+}
+
+#profile-pic {
+    background-color: alpha(var(--color11), 0.2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 6px;
+    padding: 32px;
+    margin: 4px;
+}
+
+#small-greet {
+    font-size: 15px;
+}
+
+#big-greet {
+    font-size: 18px;
+}
+
+#progress-bar {
+    color: var(--module-bg);
+    background-color: var(--color3);
+    border: solid 10px var(--foreground);
+}
+
+#progress-bar-sep {
+    padding: 4px;
+    margin: 16px 0px;
+    border-radius: 100px;
+    background-color: var(--module-bg);
+}
+
+#progress-bar-container {
+    background-color: var(--module-bg);
+    border-radius: 100px;
+    padding: 8px;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.041);
+}
+
+#appslot {
+    border-width: 1px ;
+    border-color: var(--foreground);
+    padding: 8px;
+    background-color: var(--background);
+}
+
+#search {
+    padding: 15px;
+    background-color: var(--background);
+}
+
+#appbox {
+    border-width: 1px ;
+    border-color: var(--foreground);
+    padding-top: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: alpha(var(--background), 0.9);
+}
+
+#appslot:hover {
+    background-color: var(--color2);
+}
+
+button:hover {
+    background-color: var(--color2);
+    transition: background-color 0.4s;
+}
+
+#scrolled-viewport {
+    border-color: var(--foreground);
+    border-width: 5px;
+    background: var(--background);
+    color: var(--color4);
+    border-radius: 1px;
+}
+
+#wallbutton {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#appwindow{
+    margin: 20px;
+    padding : 200px;
+    border-color: var(--foreground);
+    border-width: 5px;
+    background: var(--background);
+    border-radius: 4px;
+}
+
+#media {
+    font-size: 12px;
+}
+
+#window-inner {
+    border-color: alpha(var(--color11), 0);
+    background-color: alpha(var(--window-bg), 0);
+    padding: 0px;
+}
+
+#big {
+    color: var(--color5);
+    font-weight: 500;
+    font-size: 18px;
+}
+#small { 
+    color: var(--color5);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#inside-box {
+    margin: 10px;
+    padding : 13px;
+    border-color: var(--color12);
+    border-width: 2px;
+    background-color: var(--background);
+    border-radius: 2px;
+}
+
+#memlabels {
+    font-weight: 500;
+    font-size: 14px;
+
+}
+
+#date-time>label {
+    font-weight: 900;
+    font-size: 28px;
+}
+
+#x {
+  font-size: 30px;
+}
+
+#close-header {
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 600px;
+}
+
+#mem-bar {
+    color: var(--module-bg);
+    background-color: var(--color0);
+    border: solid 10px var(--color12);
+}
+
+#hq {
+    padding: 16px;
+    border: solid 1px var(--border-color);
+    border-radius: 1px;
+    background: var(--module-bg);
+}
+
+#hq_button {
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    border-top: solid 1px var(--border-color);
+    border-right: solid 1px var(--border-color);
+    border-left: solid 1px var(--border-color);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background: var(--module-bg);
+}
+
+#hq_button:hover {
+    background-color: var(--color12);
+    transition: background 0.4s;
+}
+
+#profile-pic {
+    background-color: alpha(var(--color1), 0.2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 6px;
+    padding: 32px;
+    margin: 4px;
+}
+
+#small-greet {
+    font-size: 15px;
+}
+
+#big-greet {
+    font-size: 18px;
+}
+
+#window {
+    margin: 5px;
+    padding : 14px;
+    background-color: var(--background);
+}
+
+#scrolled-viewport {
+    border-color: var(--foreground);
+    border-width: 5px;
+    background: var(--background);
+    color: var(--color4);
+    border-radius: 1px;
+}
+
+#wallbutton {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+
+#appwindow{
+    margin: 20px;
+    padding : 200px;
+    border-color: var(--foreground);
+    border-width: 5px;
+    background: var(--background);
+    border-radius: 4px;
+}
+
+
+
+#stopwatch_widget{
+    color: var(--color5);
+    font-weight: 400;
+    font-size: 14px;
+    margin: 5px;
+    padding : 14px;
+    background-color: var(--background);
+}
+
+#stopwatch_time{
+    color: var(--color5);
+    font-weight: 400;
+    font-size: 14px;
+    margin: 5px;
+    padding : 14px;
+    background-color: var(--background);
+}

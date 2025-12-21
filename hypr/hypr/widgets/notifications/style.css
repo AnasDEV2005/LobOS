@@ -1,0 +1,69 @@
+:vars {
+    --background: #1c2433;
+    --foreground: #69C3FF;
+    --color0:#1c2433;
+    --color1: #262e3d;
+    --color2: #303847;
+    --color3: #444c5b;
+    --color4: #a1adb7;
+    --color5: #c3cfd9;
+    --color6: #ABB7C1;
+    --color7: #08bdba;
+    --color8: #FF738A;
+    --color9: #FF955C;
+    --color10: #EACD61;
+    --color11: #3CEC85;
+    --color12: #77aed7;
+    --color13: #69C3FF;
+    --color14: #22ECDB;
+    --color15: #B78AFF;
+    --window-bg: alpha(var(--background), 0.9);
+    --module-bg: alpha(var(--background), 0.8);
+    --border-color: var(--foreground);
+}
+
+* {
+    all: unset;
+    color: var(--foreground);
+    font-family: "newfont";
+}
+ 
+#notification-box {
+    padding: 0.8rem;
+    background-color: var(--background);
+    border: solid 1px var(--foreground);
+    border-radius: 1px;
+}
+
+
+
+#notif>button:active {
+    margin-right: -500px;
+    padding-right: 0px;
+    padding-left: 300px;
+}
+
+
+#notification-title-circular-progress-bar {
+  color: var(--color1);
+}
+#notification .summary {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#notification .body {
+    color: var(--color5);
+    font-weight: normal;
+    font-size: 15px;
+}
+
+
+#close-symbolic {
+    color: var(--foreground);
+
+}
+
+#close-svg {
+    color: var(--foreground);   
+}

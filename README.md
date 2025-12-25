@@ -100,7 +100,9 @@ The lock screen wallpaper should be in *~/wallpapers/Wallpaper.jpg*
 >If you right click above the bar or in an empty space on the screen, it'll show a panel containing ram and ssd usage info, and visually incomplete but functional video/audio player controls.
 
 </br>
-
+</br>  
+The bottom command execs a single shell command, can run apps, and can run commands using shortcuts.  
+If you want to edit command shortcuts go to hypr/widgets/bar/executioner.sh.
 
 
 

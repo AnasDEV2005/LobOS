@@ -55,6 +55,24 @@ button {
     min-height: 28px;
 }
 
+#viewport {
+    color: var(--foreground);
+    background-color: var(--window-bg);
+}
+.selected {
+    background-color: var(--color2);
+}
+
+#appslot {
+    border: solid 5px;
+    border-color: var(--color1);
+    padding: 5px;
+}
+
+#appbox {
+    padding-top: 600px;
+}
+
 #end-container {
     /* background-color: var(--window-bg);    */
     min-height: 28px;
@@ -62,37 +80,28 @@ button {
 
 #workspaces {
     padding: 6px;
+    padding-left: 106px;
+    padding-right: 106px;
+    margin-left: 150px;
     min-width: 0px;
-    background-color: var(--module-bg);
+    background-color: var(--color3);
+    border-left: solid 2px var(--color12);
+    border-right: solid 2px var(--color12);
+    border-radius: 6px;
 }
 
 #workspaces>button {
-    padding: 0px 8px;
-    transition: padding 0.3s steps(8);
-    background-color: var(--ws-inactive);
+    padding: 5px 10px;
+    background-color: var(--background);
 }
 
-#workspaces>button>label {
-    font-size: 0px;
-}
 
 #workspaces>button:hover {
     transition: background 0.3s steps(8);
-    background-color: var(--ws-active);
+    background-color: var(--color2);
 }
 
-#workspaces>button.urgent {
-    background-color: var(--ws-urgent);
-}
 
-#workspaces>button.active {
-    padding: 0px 32px;
-    background-color: var(--ws-active);
-}
-
-#workspaces>button.empty {
-    background-color: #89cdd2;
-}
 
 
 #lang {    
@@ -100,6 +109,7 @@ button {
     font-size: 14px;
     padding: 5px 0px;
 }
+
 
 #command-box.active {
     color: var(--foreground);
@@ -226,9 +236,15 @@ tooltip>* {
 }
 
 
+#ws-center-container {
+    background-color: var(--background);
+    padding: 1px 7px 1px 7px;
+    border-radius: 30px;
+}
 
-
-
+#ws-start-container, #ws-end-container {
+    background-color: transparent;
+}
 
 /* --------- SCREEN LOCK -------------- */
 

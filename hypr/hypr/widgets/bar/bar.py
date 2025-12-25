@@ -13,15 +13,17 @@ from fabric.widgets.centerbox import CenterBox
 from fabric.system_tray.widgets import SystemTray
 from fabric.widgets.circularprogressbar import CircularProgressBar
 from fabric.widgets.wayland import WaylandWindow as Window
-from fabric.hyprland.widgets import Language, ActiveWindow, Workspaces, WorkspaceButton
+from fabric.hyprland.widgets import HyprlandLanguage, HyprlandActiveWindow, HyprlandWorkspaces, WorkspaceButton
 from fabric.utils import (
     FormattedString,
     bulk_replace,
     invoke_repeater,
     get_relative_path,
+    exec_shell_command_async,
     exec_shell_command
 )
-from command_processor import process_cmd
+import subprocess
+import shlex
 from gi.repository import Gio, GLib
 import command_layer
 
@@ -115,8 +117,8 @@ class StatusBar(Window):
             all_visible=False,
         )
         
-        self.active_window = ActiveWindow(name="hyprland-window")  # the middle title
-        self.language = Language(
+        self.active_window = HyprlandActiveWindow(name="hyprland-window")  # the middle title
+        self.language = HyprlandLanguage(
             formatter=FormattedString(
                 " {replace_lang(language)}",
                 replace_lang=lambda lang: bulk_replace(
@@ -131,7 +133,16 @@ class StatusBar(Window):
 
         # the status info stuff + tray
         self.date_time = DateTime(name="date-time")
-        self.system_tray = SystemTray(name="system-tray", spacing=4)
+        self.system_tray = SystemTray(name="system-tray", spacing=12)
+
+
+
+        self.workspaces = HyprlandWorkspaces(       # workspaces
+            name="workspaces",
+            spacing=12,
+            buttons_factory=lambda ws_id: WorkspaceButton(id=ws_id, label=None),
+        )
+
 
 ## STATUS CIRCLES
 #############################################################################################################################
@@ -222,7 +233,7 @@ class StatusBar(Window):
 
         self.status_container = Box(
             name="widgets-container",
-            spacing=4,
+            spacing=24,
             orientation="h",
             children=self.progress_bars_overlay,
         )
@@ -230,8 +241,10 @@ class StatusBar(Window):
 
         self.children = CenterBox(
             name="bar-inner",
+            spacing=10,
             start_children=Box(
                 name="start-container",
+                style="padding-left: 7px;",
                 spacing=4,
                 orientation="h",
                 children=[self.progress_container, self.command_layer.command_box],
@@ -239,11 +252,15 @@ class StatusBar(Window):
             center_children=Box(
                 name="center-container",
                 spacing=0,
+                # children=[
+                #     self.workspaces
+                #     ]
             ),
             end_children=Box(
                 name="end-container",
-                spacing=4,
+                spacing=20,
                 orientation="h",
+                style="padding-right: 15px;",
                 children=[
                     self.active_window,
                     self.status_container,
@@ -261,10 +278,17 @@ class StatusBar(Window):
 
 
        
+        
         self.show_all()
         self.command_layer.hide()
         self.command_layer.add_keybinding("Escape", lambda *_: self.toggle_off())
         self.command_layer.entry.connect("activate", self.fire_command)
+
+
+    def truncate(self, string):
+        if len(string)>47:
+            return string[:47]+"..."
+        return string
 
     def toggle_off(self):
         self.command_layer.hide()
@@ -275,17 +299,40 @@ class StatusBar(Window):
         self.command_layer.command_box.remove_style_class("active")
 
     def fire_command(self):
+
         self.command_layer.hide()
         self.STATE = not self.STATE
-        process_cmd(self.command_layer.entry.get_text())
+
+
+        s = self.command_layer.entry.get_text()
+        run = s[:4]
+        apps = self.command_layer.viewport.get_children()
+        if run == "run ":
+            apps[self.command_layer.selected_app].emit("clicked")
+            self.command_layer.entry.set_text("")
+            self.command_layer.command_input.set_label("Enter commands...")
+            self.command_layer.command_box.add_style_class("inactive")
+            self.command_layer.command_box.remove_style_class("active")
+            return
+        path = get_relative_path("./executioner.sh")
+        
+        cmd = shlex.split(self.command_layer.entry.get_text())
+        
+        print(cmd)
+
+        command = [path] + cmd
+        
+        subprocess.Popen(command)
+
         self.command_layer.entry.set_text("")
-        self.command_layer.command_input.set_label("Output ?")
+        self.command_layer.command_input.set_label("Enter commands...")
         self.command_layer.command_box.add_style_class("inactive")
         self.command_layer.command_box.remove_style_class("active")
 
     def update_progress_bars(self):
          self.disk_progress.value = psutil.disk_usage('/home').percent
          self.ram_progress.value = psutil.virtual_memory().percent
+
          if not (bat_sen := psutil.sensors_battery()):
              self.bat_circular.value = 42
          else:

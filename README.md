@@ -1,4 +1,5 @@
 
+
 <p align="center">
         <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Comfortaa&weight=700&size=80&pause=1000&color=1c24338&background=69C3FFE&center=true&vCenter=true&height=200&width=1000&lines=LobOS" alt="Typing SVG" /></a>
 
@@ -9,7 +10,7 @@
         <img src="https://img.shields.io/badge/SHELL-zsh-blue?colorA=1c2433&colorB=08bdba&style=for-the-badge" /> <br>
 
 <p align="center">
-<img src="./demo.png" >
+<img width="1920" height="1080" alt="2025-12-25_22-55" src="https://github.com/user-attachments/assets/d5dd8e84-0670-4fef-9351-31a00d5d2f31" />
 
 ---
     

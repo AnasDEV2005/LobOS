@@ -39,9 +39,7 @@
 
 </br>   
 <p align="center">
-
-  [<video src="[https://github.com/user-attachments/assets/ae02694a-3e7f-4eeb-b0ac-697c3f421222](https://youtu.be/jHRCDOJ3QYM)">](https://youtu.be/jHRCDOJ3QYM)
-
+https://youtu.be/wQvGao42ol8
 </p>
 
 

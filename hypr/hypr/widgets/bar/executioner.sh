@@ -16,6 +16,10 @@ declare -A COMMANDS=(
   [d]="vesktop"
   [z]="zen-browser"
   [q]="qutebrowser"
+  [k]="kdenlive.AppImage"
+  [w]="~/Downloads/winboat-0.9.0-x86_64.AppImage"
+  [f]="~/Downloads/Freeter-2.7.1-beta-linux-x64/Freeter-2.7.1-beta-linux-x64/freeter"
+  [p]="~/Downloads/krita-5.3.2.1-x86_64\(1\).AppImage"
 
 
 ##########################################################

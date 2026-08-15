@@ -441,7 +441,7 @@ class SidePanel(Window):
                 image_file=filepath,
                 size=250,
             ),
-            on_clicked = lambda *_: exec_shell_command(f"swww img {filepath} --transition-type center"),
+            on_clicked = lambda *_: exec_shell_command(f"awww img {filepath} --transition-type center"),
         )
         return button
     
